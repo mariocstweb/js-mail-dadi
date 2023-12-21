@@ -1,8 +1,8 @@
 console.log("js ok");
 
 // Recupero l email dell utente nel form
-const form = document.getElementById("emailUser");
-
+const form = document.getElementById("emailForm");
+const check = document.getElementById("emailCheck");
 // Creo un array con le mie email
 const mailList = [
   "mario@gmail.com",
@@ -12,7 +12,24 @@ const mailList = [
 ];
 
 // console.log(mailList);
-form.addEventListener("click", function () {
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
   const emailUtente = document.getElementById("emailUser").value;
   console.log("Email inserita dall'utente:", emailUtente);
+
+  let confermaEmail = false;
+  for (let i = 0; i < mailList.length; i++) {
+    if (mailList[i] === emailUtente) {
+      confermaEmail = true;
+      break;
+    }
+  }
+
+  if (confermaEmail) {
+    console.log("Email trovata nella lista.");
+    check.innerText = "Sei autorizzato";
+  } else {
+    console.log("Email non trovata nella lista.");
+    check.innerText = "Non sei autorizzato";
+  }
 });
