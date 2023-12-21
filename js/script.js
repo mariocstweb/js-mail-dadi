@@ -15,10 +15,10 @@ roll.addEventListener("click", function () {
   const randomNumbersUser = Math.floor(Math.random() * 6) + 1;
   const randomNumbersPc = Math.floor(Math.random() * 6) + 1;
 
-  console.log(randomNumbersUser, randomNumbersPc);
+  // console.log(randomNumbersUser, randomNumbersPc);
 
   userNumber.innerText = "Il tuo numero è : " + randomNumbersUser;
-  pcNumber.innerText = "Il tuo numero è : " + randomNumbersPc;
+  pcNumber.innerText = "Il numero del banco è : " + randomNumbersPc;
 
   // Faccio in modo che i numeri si vedano solo dopo aver cliccato il button
   userNumber.classList.toggle("d-none");
