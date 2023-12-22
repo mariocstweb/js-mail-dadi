@@ -21,15 +21,13 @@ form.addEventListener("submit", function (event) {
   for (let i = 0; i < mailList.length; i++) {
     if (mailList[i] === emailUtente) {
       confermaEmail = true;
-      break;
+      console.log("ok");
     }
   }
 
   if (confermaEmail) {
-    console.log("Email trovata nella lista.");
-    check.innerText = "Sei autorizzato";
+    check.innerText = "Email autorizzata";
   } else {
-    console.log("Email non trovata nella lista.");
-    check.innerText = "Non sei autorizzato";
+    check.innerText = "Email non autorizzata";
   }
 });
